@@ -1,0 +1,43 @@
+name: Verify paper, website and Lean proof
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild the website and check its links and copies
+        run: |
+          npm ci
+          node site/build.mjs --check
+          git diff --exit-code docs/index.html
+      - name: Check the files against release.json
+        run: python3 scripts/verify.py
+
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch Mathlib and its build cache
+        working-directory: lean
+        run: |
+          lake exe cache get
+      - name: Type-check and audit the plane companion
+        run: bash scripts/check-lean.sh plane

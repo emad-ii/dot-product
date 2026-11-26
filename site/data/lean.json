@@ -1,0 +1,87 @@
+{
+  "vonNeumann": [
+    {
+      "row": "Hilbert space", "section": "§3.1", "anchor": "s3-1", "lean": "Table1HilbertSpace",
+      "plain": "The Fock space $\\mathcal{H}$ over $L^2(\\mathbb{R}^{n+1})$ is separable and infinite dimensional. Coherent vectors $\\varepsilon(b\\hat g)$ built from real Schwartz tests $g$ through a fixed positive-time profile span it densely, and any family with the Gram table $\\exp\\langle u,v\\rangle$ and dense span is carried onto it by exactly one unitary."
+    },
+    {
+      "row": "Unitary evolution", "section": "§3.2", "anchor": "s3-2", "lean": "Table1UnitaryEvolution",
+      "plain": "$U(t)$ multiplies the $n$-particle wavefunction by $e^{-it\\sum_j\\omega(k_j)}$: a group of unitaries with $U(0)=I$. The curve $t\\mapsto U(t)\\psi$ is differentiable at $0$ exactly when $\\psi\\in\\operatorname{Dom}H$, with derivative $-\\tfrac{i}{\\hbar}H\\psi$; $H$ is symmetric and nonnegative there."
+    },
+    {
+      "row": "Tensor product", "section": "§3.4", "anchor": "s3-4", "lean": "Table1TensorProduct",
+      "plain": "Exactly one unitary carries the completed tensor product of two Fock spaces onto the Fock space over the direct sum, with $\\varepsilon(u)\\otimes\\varepsilon(v)\\mapsto\\varepsilon(u\\oplus v)$."
+    },
+    {
+      "row": "Born rule", "section": "§3.5", "anchor": "s3-5", "lean": "Table1BornRule",
+      "plain": "For every unit state $\\psi$, exactly one weight on closed subspaces is nonnegative, normalized, countably additive and invariant under unitaries fixing $\\psi$: the Born weight $\\|P_K\\psi\\|^2$."
+    },
+    {
+      "row": "Self-adjoint observables", "section": "§3.5", "anchor": "s3-5", "lean": "Table1SelfAdjointObservables",
+      "plain": "Every projection-valued measure $P$ on $\\mathbb{R}$ gives a densely defined, exactly self-adjoint $A=\\int a\\,\\mathrm{d}P(a)$ on $\\operatorname{Dom}A=\\{\\psi:\\int a^2\\,\\mathrm{d}\\|P(a)\\psi\\|^2<\\infty\\}$, with expectation $\\int a\\,\\mathrm{d}\\|P(a)\\psi\\|^2$."
+    },
+    {
+      "row": "Projection update", "section": "§3.6", "anchor": "s3-6", "lean": "Table1ProjectionUpdate",
+      "plain": "The pure update $P\\psi/\\|P\\psi\\|$ exists and is unique up to a phase. For every countable mixture $\\rho$ the conditioned state is $P\\rho P/\\operatorname{tr}(\\rho P)$, the operator certain of the event that keeps the subevent ratios is unique, and $\\operatorname{tr}(\\rho P)$ is the same in every Hilbert basis."
+    }
+  ],
+  "wightman": [
+    {
+      "row": "Poincaré covariance", "section": "§3.3", "anchor": "s3-3", "lean": "Table1PoincareCovariance",
+      "plain": "Second-quantized spacetime translations and all of $O(n+1)$ fix the vacuum and carry $\\Phi(f)$ to the field of the moved test. Boosts along every direction form a one-parameter unitary group fixing the vacuum and intertwining the field."
+    },
+    {
+      "row": "Forward-cone spectrum", "section": "§3.2", "anchor": "s3-2", "lean": "Table1ForwardConeSpectrum",
+      "plain": "For every finite set of momenta, $|\\sum_i k_i|\\le\\sum_i\\omega(k_i)$; every total energy is $0$ or at least $\\hbar m$; the shift contracts the $n$-particle sector by $e^{-snm}$."
+    },
+    {
+      "row": "Unique vacuum", "section": "§3.2", "anchor": "s3-2", "lean": "Table1UniqueVacuum",
+      "plain": "$H\\Omega=0$, and for every $s>0$ the vectors fixed by the shift $e^{-sH/\\hbar}$ are exactly the multiples of $\\Omega$."
+    },
+    {
+      "row": "Field distributions", "section": "§3.3", "anchor": "s3-3", "lean": "Table1FieldDistributions",
+      "plain": "The finite-particle core is dense and contains $\\Omega$; every matrix element $f\\mapsto\\langle\\varphi,\\Phi(f)\\psi\\rangle$ is continuous on spacetime Schwartz space; $\\Phi(f)$ is symmetric for real $f$."
+    },
+    {
+      "row": "Spacelike commutativity", "section": "§3.3", "anchor": "s3-3", "lean": "Table1SpacelikeCommutativity",
+      "plain": "For real compactly supported tests whose supports satisfy $|t-t'|<|x-x'|$ point by point, $\\Phi(f)\\Phi(f')=\\Phi(f')\\Phi(f)$ on the core, in every dimension $D\\ge 2$."
+    },
+    {
+      "row": "Cyclic vacuum", "section": "§3.3", "anchor": "s3-3", "lean": "Table1CyclicVacuum",
+      "plain": "Polynomials in the fields of real Schwartz tests, applied to $\\Omega$, span a dense subspace of the Fock space."
+    }
+  ],
+  "steps": [
+    {
+      "section": "§2.2", "anchor": "s2-2", "lean": "gaussian_of_copyRotation",
+      "plain": "A law on $\\mathbb{R}$ whose two independent copies are unchanged by every rotation is a centred Gaussian. No moment, density or continuity is assumed. The fair-sign pair fails: a $45^\\circ$ rotation zeros its first coordinate half the time (<code>fairSign_rot45_zeros_half</code>)."
+    },
+    {
+      "section": "§2.3", "anchor": "s2-3", "lean": "lattice_covariance_determination",
+      "plain": "On every finite graph with site mean square $S>0$ and edge ratio $\\ell_{\\min}<r<\\ell_{\\max}$, the unique maximum-entropy law among all laws with those mean squares is the Gaussian with precision $\\alpha I+\\beta L$, and $\\beta>0$ exactly when $r<\\bar\\ell$. It is centred with characteristic function $e^{-\\xi^{\\mathsf T}Q^{-1}\\xi/2}$ (<code>gibbs_charFun</code>) and reflection positive on every symmetric free box (<code>freeBox_lattice_gibbs_reflection_pos</code>)."
+    },
+    {
+      "section": "§2.3", "anchor": "s2-3", "lean": "tendsto_finite_gaussian_charFun",
+      "plain": "As the lattice spacing goes to zero, the lattice covariance form tends to $\\hbar\\int\\overline{\\hat f}\\,\\hat g/(|p|^2+m^2)$ in every dimension, and with it every finite-list Gaussian characteristic value."
+    },
+    {
+      "section": "§2.4", "anchor": "s2-4", "lean": "positive_polynomial_two_pulses_force_affine",
+      "plain": "A positive nonconstant symbol whose opposite-pulse form is nonnegative is $a(x+m^2)$. For every degree $\\ge 2$ an explicit smooth test supported in $s>0$ makes the reflected form strictly negative (<code>smooth_normal_nogo_unconditional</code>)."
+    },
+    {
+      "section": "§3.2", "anchor": "s3-2", "lean": "plane_heisenberg_uncertainty",
+      "plain": "The plane reading $Q(h)$ and its time derivative $P(h)$ obey $[Q,P]=i\\hbar$ and $\\Delta Q\\,\\Delta P\\ge\\hbar/2$ on finite-particle states; and the one-particle evolution tends in $L^2$ to the free Schrödinger evolution $e^{-i\\tau|k|^2/2m}$ (<code>nonrelativistic_schrodinger_l2_limit</code>)."
+    },
+    {
+      "section": "§5", "anchor": "s5", "lean": "interval_chord",
+      "plain": "A function bounded above on $[0,1]$ and additive there is linear. No continuity is assumed. This doubling-map argument is the one scalar step behind both the Gaussian law and the Born rule."
+    }
+  ],
+  "outside": [
+    "A single countably additive measure on tempered distributions (Bochner–Minlos). The paper's law is the family of finite-list laws, which is what the file works with.",
+    "The position-space bridge from finite free boxes to $(-\\Delta+m^2)^{-1}$ on $L^2(\\mathbb{R}^D)$. The momentum-space limit is proved.",
+    "Reflection positivity in the continuum for general nonlinear preparations, and positivity and nonconstancy of the symbol, which enter §2.4 as hypotheses. Finite-box reflection positivity and the continuum kernel factorization are proved.",
+    "The identification of the Fock space with $L^2$ of a measure on the plane, and the multiplication law of the full Poincaré group. Translations, rotations and boosts are each proved to fix $\\Omega$ and intertwine the field.",
+    "The converse spectral theorem, that every self-adjoint operator comes from a projection-valued measure. The direction the paper uses is proved."
+  ]
+}

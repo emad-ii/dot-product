@@ -1,0 +1,22 @@
+{
+  "title": "A Dot Product Is All You Need",
+  "author": "Emad Mostaque",
+  "date": "2026-11-26",
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.34.1",
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "papers": {
+    "plane": {
+      "title": "A Dot Product Is All You Need",
+      "pages": 4,
+      "capstone": "DotProduct.theorem1_table1_axioms",
+      "source_lines": 17376
+    }
+  },
+  "files": {
+    "paper/A_Dot_Product_Is_All_You_Need_Final.pdf": "4c0f64447ff7a5cdcc8eb9e5b4c4afd943176107402a290046117b24cbb1c748",
+    "paper/A_Dot_Product_Is_All_You_Need_Final.tex": "7aaedeb897b7217e98463f3ff38bfb8281aa5c5a6d950612f5799cdadb5bef81",
+    "lean/A_Dot_Product_Is_All_You_Need_Final.lean": "f5fac8264bdc0ca24d83f92bda1d2c26a3e79b12665bf7ba80eaa11ac6689552"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "a-dot-product-is-all-you-need",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paper, Lean 4 proof and explainer website for \"A Dot Product Is All You Need\"",
+  "type": "module",
+  "scripts": {
+    "build": "node site/build.mjs",
+    "serve": "python3 -m http.server 4173 --directory docs"
+  },
+  "devDependencies": {
+    "katex": "0.16.22"
+  }
+}
