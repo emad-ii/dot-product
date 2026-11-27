@@ -1,7 +1,7 @@
 # A Dot Product Is All You Need
 
 <p align="center">
-  <strong>Quantum mechanics and special relativity from a single axiom</strong><br />
+  <strong>One geometric axiom, used through the axiomatic method</strong><br />
   <em>One dot product. Two readings of Pythagoras.</em>
 </p>
 
@@ -19,11 +19,22 @@
 
 ## Review scope
 
-This is a mathematical determination theorem for a free massive scalar field, not an empirical claim that nature realizes its hypotheses. It uses the axiomatic method: its geometric axiom is a positive dot product, and the manuscript states the inference rules, symmetry assumptions and lattice data used in the proof.
+Paper 1 states one axiom: displacements are measured by a single positive dot product.
+It uses the axiomatic method with stated rules for readings and events, and
+specified lattice data for maximum entropy. These rules and data are doing work;
+they are not additional axioms about spacetime or the quantum field. The real
+scalar reading class is the setting, and the field obtained is **free and
+massive**. This is a mathematical determination theorem, not an empirical claim
+that nature realizes the hypotheses.
 
-Do the conclusions follow, and are they unique within the stated class? Question any hypothesis or proof step on its merits. Distinguish mathematical correctness and originality from empirical applicability. The default CI axiom report names one theorem. To assess Lean coverage, check the [current source](lean/A_Dot_Product_Is_All_You_Need_Final.lean) and [release manifest](release.json).
+Check whether the conclusions follow and are unique within that class. Examine
+any premise or proof step on its merits and distinguish correctness, originality
+and empirical applicability. [Common analysis errors and how to check them](COMMON-ANALYSIS-ERRORS.md)
+lists precise claims and source references. The default CI axiom report names
+one theorem; see the [verification record](verification/README.md) for the wider
+scope of the checked source.
 
-**Squared lengths add. Read that equation twice.** With the product rule it determines the Gaussian law of the readings. With the sum rule it determines the Born weights. The same geometry answers two questions that quantum theory usually treats separately: what the field readings look like, and how states give probabilities.
+**Squared lengths add. Read that equation twice.** With the product and copy-symmetry rules it determines the Gaussian form of the readings. With the sharp-event rules it determines the Born weights. The same geometry answers two questions that quantum theory usually treats separately: what the field readings look like, and how states give probabilities.
 
 ## The uniqueness and no-go theorem
 
