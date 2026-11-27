@@ -11,12 +11,12 @@
       "title": "A Dot Product Is All You Need",
       "pages": 4,
       "capstone": "DotProduct.theorem1_table1_axioms",
-      "source_lines": 17376
+      "source_lines": 43907
     }
   },
   "files": {
     "paper/A_Dot_Product_Is_All_You_Need_Final.pdf": "4c0f64447ff7a5cdcc8eb9e5b4c4afd943176107402a290046117b24cbb1c748",
     "paper/A_Dot_Product_Is_All_You_Need_Final.tex": "7aaedeb897b7217e98463f3ff38bfb8281aa5c5a6d950612f5799cdadb5bef81",
-    "lean/A_Dot_Product_Is_All_You_Need_Final.lean": "f5fac8264bdc0ca24d83f92bda1d2c26a3e79b12665bf7ba80eaa11ac6689552"
+    "lean/A_Dot_Product_Is_All_You_Need_Final.lean": "85a332fca1b57c255b105750ad75cf93f90dafebb1fce1180715d92f880bed9d"
   }
 }
