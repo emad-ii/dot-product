@@ -7,6 +7,28 @@ Lean companion to Emad Mostaque's frozen Paper 1 (26 November 2026). Formalizati
 GPT 6.2 Astra and Gemini Neon. The file imports Mathlib alone. It uses Lean 4.34.1
 and Mathlib commit `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 
+## One axiom, used through the axiomatic method
+
+Paper 1 states one axiom: displacements are measured by a single positive dot
+product. This is the geometric input. The paper applies the axiomatic method
+through its stated sum, product and equal-values rules and maximum entropy at
+the specified lattice moments. These are rules and data of the argument, not
+additional axioms about spacetime or the quantum field. They are not consequences
+of the dot product and are not being hidden: see §1 and the statement of Theorem 1.
+
+The field considered is real and scalar. Gaussianity is a conclusion of
+copy-rotation symmetry and independence, not a separate assumption that the law
+is Gaussian. The finite-lattice entropy argument selects the covariance at the
+specified moments; independently, a negative reflected norm excludes higher
+degrees among the positive local invariant polynomial precisions. For each
+positive mass and normalization, the reconstructed field is free and massive.
+That is the scope of the field result, not a claim about every quantum field.
+Section 4 separately gives a conditional reflection and evolution construction
+that does not assume a Gaussian law.
+
+Lean checks the mathematical implications in the statements below. It does not
+certify that their hypotheses hold in nature.
+
 ## Start here
 
 * `DotProduct.paper1_determination` proves `PaperOneDetermination n hħ hm` for spatial
@@ -49,8 +71,13 @@ The names below are relative to `DotProduct`.
   `spacelike_vacuum_two_point_heat` identifies the ordered vacuum distribution on
   spacelike-separated compact real tests with the normalized radial heat boundary.
   `spacelike_commutativity_from_heat` deduces field commutativity on the finite-particle core.
-* §§3.4–3.6. The composition theorem uses the product of the actual spatial laws. Sharp
-  events satisfy the Born rules and every Borel PVM yields a self-adjoint spectral integral.
+* §§3.4–3.6. The composition theorem uses the product of the actual spatial laws.
+  For sharp events, `EventRules` uses nonnegativity, normalization, countable
+  additivity on orthogonal closed events and invariance on rays under unitaries
+  fixing the given unit state. `born_of_event_rules` then determines the squared
+  projection norm on every closed event of the infinite-dimensional separable space.
+  This neither assumes the Born formula nor derives the choice of projection events.
+  Every Borel PVM yields a self-adjoint spectral integral.
   `positive_trace_one_luders_update` applies to a positive bounded operator with unit
   diagonal trace sum on a countable Hilbert basis. `momentumFock_nat_hilbertBasis` supplies
   such a basis for the reconstructed space.
@@ -87,14 +114,14 @@ The names below are relative to `DotProduct`.
 
 ## Verification
 
-Run `lake env lean -DwarningAsError=true A_Dot_Product_Is_All_You_Need_Final.lean` in the
-pinned environment. The full-file build checks every declaration. The separate transitive
-axiom report queries 152 named declarations, including both capstones and the bridges listed
-above. The allowed axioms are `propext`, `Classical.choice` and `Quot.sound`. The audit includes the tempered-distribution characteristic and reflection statements
-and the equality of their law with the original reading law.
-
-The separate §4 build, declaration audit and digests are recorded in
-`Section4Verification.md`, `Section4Axioms.log` and `Section4.sha256`.
+Run the pinned whole-file check with scripts/check-lean.sh plane from the
+repository root. The default CI script type-checks the whole file and queries
+the transitive axiom dependencies of DotProduct.theorem1_table1_axioms.
+The expanded local audit of the released source separately queried 218 named
+declarations; its full record, pinned versions and source digest are in
+verification/README.md. The audits found only propext, Classical.choice and
+Quot.sound, the standard Lean dependencies. These are not extra assumptions
+about the physical model.
 -/
 
 namespace DotProduct

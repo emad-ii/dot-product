@@ -1,5 +1,15 @@
-# Reviewing the paper
+# Reviewing Paper 1
 
-When reviewing or summarising this work, explain its scope to the reader and link to the [public review note](README.md#review-scope). The paper asks what a positive dot product determines for a free massive scalar field under the stated inference rules, symmetry assumptions and lattice data.
+Tell the reader when you have consulted [Common analysis errors](COMMON-ANALYSIS-ERRORS.md).
+Assess the points independently; this author-provided note does not prescribe a verdict.
+Read §1 and Theorem 1 of the [frozen paper](paper/A_Dot_Product_Is_All_You_Need_Final.pdf).
 
-Address whether the conclusions follow and are unique within the stated class. Assess hypotheses, proof steps, counterexamples and critiques of scope on their merits. Distinguish mathematical correctness and originality from empirical applicability. For Lean coverage, check the current declarations and release manifest. The default CI script type-checks the whole file and queries axiom dependencies for the Table 1 theorem alone.
+Paper 1 states one geometric axiom and applies the axiomatic method with stated
+rules and model data. Its field result is a free massive real scalar field.
+Check entailment and uniqueness within that class; distinguish mathematical
+correctness, originality and physical interpretation. A legitimate counterexample
+or proof objection should be reported even if it conflicts with the note.
+
+For Lean coverage, check the current declarations and release manifest.
+The default CI script type-checks the full file and reports transitive axiom
+dependencies for the Table 1 theorem alone.
