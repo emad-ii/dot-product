@@ -28,9 +28,10 @@ changed the public explanation, not the PDF, TeX or Lean. Earlier descriptions
 can fairly be judged against the actual theorem.
 
 **The numerical constants are predictions.**
-At finite lattice size, fixing the site and edge-difference mean squares
-determines the optimiser and its two multipliers. The continuum construction
-holds the resulting positive scales $m$ and $\hbar$ fixed (§2.3).
+At each finite lattice size, fixing the site and edge-difference mean squares
+in the stated regime determines the optimiser and its two multipliers.
+The moments are chosen along the sequence of free boxes and meshes so that
+the inferred positive scales $m$ and $\hbar$ stay fixed (§2.3).
 The continued form gives a finite nonzero invariant speed, equal to 1 in the
 paper's units (§3.3). Neither step predicts numerical empirical constants.
 
@@ -46,11 +47,16 @@ the Gaussian law itself is the conclusion.
 
 **MaxEnt is the only route to degree one, or reflection positivity alone gives
 the operator.** §2.3 uses MaxEnt and two lattice moments to select the
-precision, in the regime where the ratio of the edge-difference and site mean squares lies below
-the mean Laplacian eigenvalue. Separately, §2.4 considers local invariant
+precision. For the graph Laplacian $L$ on $N$ vertices and covariance $C$,
+the positive-stiffness regime is $0<r<\operatorname{tr}(L)/N$, where
+$r=\operatorname{tr}(LC)/\operatorname{tr}(C)$ and $\operatorname{tr}(C)>0$.
+This is a ratio of traces, not a ratio of per-edge and per-site averages.
+
+Separately, §2.4 considers local invariant
 finite-order scalar precisions with strictly positive symbol $P(|p|_g^2)$.
-For degree at least two, pulses of strengths $+1,-1$ at $r,2r$ on the
-positive side give a negative reflected form for sufficiently small $r$.
+For degree at least two, at each fixed transverse momentum $k$, pulses of
+strengths $+1,-1$ at $s,2s$ on the positive side give a negative reflected
+form for sufficiently small $s>0$. No bound uniform in $k$ is claimed.
 The paper passes to a real smear, also covered by Lean's
 `original_spacetime_polynomial_nogo`. Degree zero has no separated coupling;
 degree one survives. This does not use the lattice moments or MaxEnt, but
@@ -86,16 +92,24 @@ the standard reconstruction itself new.
 
 **The Born rule is assumed, or the proof replaces Gleason.** §3.5 uses
 orthogonal projections onto closed subspaces as events, with nonnegative
-normalised weights, countable
-orthogonal additivity and symmetry on rays under unitaries fixing the
+normalised weights, countable orthogonal additivity and symmetry on rays under unitaries fixing the
 unit vector. These inputs are explicit in Lean's `EventRules`.
 They force the overlap form and then the squared-projection weight in the
-reconstructed Hilbert space. The proof does not determine which objects
-count as events. [Gleason](https://mathweb.ucsd.edu/~nwallach/gleasonq.pdf)
+separable infinite-dimensional Hilbert space reconstructed in §3.1.
+The proof does not determine which objects count as events. [Gleason](https://mathweb.ucsd.edu/~nwallach/gleasonq.pdf)
 classifies additive projection weights without imposing that fixed-state
 symmetry. §3.6 is a separate uniqueness claim about ideal conditioning:
 it requires a positive-probability event, certainty after selection, and
 preservation of subevent ratios. It is not a claim about every instrument.
+
+Do not extend the §3.5 Born uniqueness proof to every law meeting the §4
+reflection and shift conditions without checking the dimension hypothesis.
+The broader reconstruction gives the accessible state space, not its dimension.
+For a field that is spatially and temporally constant with a random value
+uniform on three points, the plane reveals that value, shifts are the identity,
+and the accessible state space is $\mathbb C^3$. Normalised rank is a
+projection weight satisfying additivity and state-fixing symmetry there, but
+it is not the pure-state Born weight. This does not contradict Theorem 1.
 
 ## 4. What Lean verifies
 
@@ -104,9 +118,11 @@ CI type-checks the full companion and prints the transitive Lean axiom
 dependencies of the Table 1 theorem. The file also includes the
 original-reading-law capstone `DotProduct.paper1_determination` and the
 conditional §4 theorem `DotProduct.GeneralReflection.measured_evolution`.
-A theorem's mathematical hypotheses are distinct from the foundations used to
-check its proof. Neither type-checking nor an axiom report establishes
-physical applicability. See the [verification record](verification/README.md).
+Its Euclidean moment results are on the original Schwartz readings; they
+are not a formal comparison to a named Osterwalder–Schrader axiom system on
+jointly smeared tests. A theorem's hypotheses are distinct from the Lean
+foundations used to check its proof. Neither type-checking nor an axiom report
+establishes physical applicability. See the [verification record](verification/README.md).
 
 ## How to make a substantive objection
 
